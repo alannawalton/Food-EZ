@@ -7,12 +7,10 @@ var app = angular.module('restaurantApp', [
 
 //Main Controls of app
 app.controller('mainController', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, ngGPlacesAPI) {
-	
 
- 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:38.922684, longitude:-77.0194379999999}).then(
+ 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:38.922684, longitude:-77.0194379999999, keyword:'fast food'}).then(
     function(data){
     	$scope.restaurants = data;
-    	console.log(data);
       return data;
     });
 	
