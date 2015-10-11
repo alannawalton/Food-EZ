@@ -8,7 +8,16 @@ var app = angular.module('restaurantApp', [
 //Main Controls of app
 app.controller('mainController', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, ngGPlacesAPI) {
 
- 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:38.922684, longitude:-77.0194379999999, keyword:'fast food'}).then(
+	$scope.lat = 38.922684;
+	$scope.longitude = -77.0194379999999;
+
+	$scope.clickedRestaurant = '';
+
+	$scope.saveRestaurant = function (restaurantName) {
+		$scope.clickedRestaurant = restaurantName;
+	}
+
+ 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:$scope.lat, longitude:$scope.longitude, keyword:'fast food'}).then(
     function(data){
     	$scope.restaurants = data;
       return data;
@@ -43,6 +52,7 @@ app.controller('mainController', function($scope, $mdBottomSheet, $mdSidenav, $m
 	    }
 	];
 });
+
 
 //Switch Material Design Color Scheme
 app.config(function($mdThemingProvider) {
