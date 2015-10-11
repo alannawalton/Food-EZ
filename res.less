@@ -1,0 +1,65 @@
+.splash {
+	display: none;
+}
+
+[ng-cloak].splash {
+	display: block !important;
+}
+		
+.splash {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:100%;
+	width:100%;	
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	background: red;
+	padding-top: 100px;
+}
+
+.splash h2 {
+	text-align: center;
+	font-size: 4em;
+	color:white;
+	margin-top: 15px;			
+}
+.splash img {
+	align: middle;
+	height: 200px;
+	margin: 0% 40%;
+	width: 400px;		
+}
+
+
+md-card {
+  background-color: #fff;
+  h2:first-of-type {
+    margin-top: 0;
+  }
+}
+md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; // round toolbar buttons
+  }
+}
+h2 {
+  font-weight: 400;
+}
+.md-toolbar-tools-bottom {
+  font-size: small;
+  & :last-child {
+    opacity: 0.8;
+  }
+}
+md-toolbar:not(.md-hue-1),
+.md-fab {
+  fill: #fff;
+}
+md-sidenav {
+  fill: #737373;
+  ng-md-icon {
+    position: relative;
+    top: 5px; // adjust for svg viewbox
+  }
+}
