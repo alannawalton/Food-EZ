@@ -55,6 +55,9 @@
       <md-tab id="tab2" aria-controls="tab2-content">
         Order Form
       </md-tab>
+      <md-tab id="tab3" aria-controls="tab3-content">
+        Food-EZ Pass
+      </md-tab>
     </md-tabs>
   </md-toolbar>
   <md-toolbar class="md-hue-1" ng-show="showSearch">
@@ -131,7 +134,36 @@
                           <md-input-container flex>
                             <h4> You are ordering from {{clickedRestaurant}} </h4>
                             <label> Enter your order details below.</label>
-                            <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+                            <textarea ng-model="no" columns="1" md-maxlength="150"></textarea>
+                          </md-input-container>
+                        </div>
+                      </md-item-content>
+                      <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                      <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                    </md-item>
+                    <md-divider></md-divider>
+                  </md-list>
+                </md-card-content>
+              </md-card>
+          </div>
+          <div role="tabpanel"
+               id="tab3-content"
+               aria-labelledby="tab3"
+               ng-switch-when="2"
+               md-swipe-left="next()"
+               md-swipe-right="previous()" 
+               layout="row" layout-align="center center">
+              <md-card flex-gt-sm="90" flex-gt-md="80">
+                <md-card-content>
+                  <h2>Menu</h2>
+                  <md-list>
+                    <md-item>
+                      <md-item-content>
+                        <div class="md-tile-content">
+                          <md-input-container flex>
+                            <h4> You are ordering from {{clickedRestaurant}} </h4>
+                            <label> Enter your order details below.</label>
+                            <textarea ng-model="no" columns="1" md-maxlength="150"></textarea>
                           </md-input-container>
                         </div>
                       </md-item-content>
