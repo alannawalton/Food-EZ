@@ -7,14 +7,12 @@ var app = angular.module('restaurantApp', [
 
 //Main Controls of app
 app.controller('mainController', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, ngGPlacesAPI) {
+	
 
-	$scope.details = ngGPlacesAPI.placeDetails({reference:"really_long_reference_id"}).then(
-    function (data) {
-      return data;
-    });
-
- 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:-33.8665433, longitude:151.1956316}).then(
+ 	$scope.data = ngGPlacesAPI.nearbySearch({latitude:38.922684, longitude:-77.0194379999999}).then(
     function(data){
+    	$scope.restaurants = data;
+    	console.log(data);
       return data;
     });
 	
@@ -46,7 +44,6 @@ app.controller('mainController', function($scope, $mdBottomSheet, $mdSidenav, $m
 	      icon: 'settings'
 	    }
 	];
-	$scope.restaurants = $scope.data;
 });
 
 //Switch Material Design Color Scheme
